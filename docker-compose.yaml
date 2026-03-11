@@ -1,5 +1,3 @@
-
-
 services:
   notes-api:
     build: .
@@ -9,3 +7,4 @@ services:
     environment:
       USER_NAME: Compose_Malak_Yassin
       ID: Compose_55_3546
+    command: ["java", "-jar", "/app/app.jar"]
