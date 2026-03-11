@@ -50,4 +50,17 @@ public class NoteService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
+    public List<Note> searchNotesByTitle(String title) {
+
+        List<Note> results = noteRepository.findAll()
+                .stream()
+                .filter(note -> note.getTitle().toLowerCase().contains(title.toLowerCase()))
+                .toList();
+
+        if (results.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        return results;
+    }
 }

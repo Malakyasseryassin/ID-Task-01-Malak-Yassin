@@ -47,5 +47,13 @@ public class UserService {
         if(!deleted)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
+    public User getUserByUsername(String username) {
+
+        return userRepository.findAll()
+                .stream()
+                .filter(user -> user.getUsername().equalsIgnoreCase(username))
+                .findFirst()
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
 
 }

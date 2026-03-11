@@ -26,12 +26,8 @@ public class NoteController {
         return noteService.createNote(note);
     }
     @GetMapping("/search")
-    public List<Note> searchByTitle(@RequestParam String title) {
-
-        return noteService.getAllNotes()
-                .stream()
-                .filter(n -> n.getTitle().toLowerCase().contains(title.toLowerCase()))
-                .toList();
+    public List<Note> searchNotes(@RequestParam String title) {
+        return noteService.searchNotesByTitle(title);
     }
     @PutMapping("/{id}")
     public Note updateNote(@PathVariable String id,
