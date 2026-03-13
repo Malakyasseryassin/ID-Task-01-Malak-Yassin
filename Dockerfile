@@ -7,6 +7,8 @@ COPY target/*.jar app.jar
 COPY src/main/resources/notes.json /data/notes.json
 COPY src/main/resources/users.json /data/users.json
 
+RUN mvn clean install
+
 ENV USER_NAME=Docker_Malak_Yassin
 ENV ID=Docker_55_3546
 
