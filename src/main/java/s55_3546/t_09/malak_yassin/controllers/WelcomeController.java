@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
+    @Value("${app.description}")
+    private String description;
+
+    @Value("${app.version}")
+    private String version;
+
     @Value("${USER_NAME}")
     private String userName;
 
@@ -15,6 +21,6 @@ public class WelcomeController {
 
     @GetMapping("/welcome")
     public String welcome() {
-        return "Hello " + userName + " " + id + ", from Notes API";
+        return description + " v" + version + " - " + userName + " (" + id + ")";
     }
 }
