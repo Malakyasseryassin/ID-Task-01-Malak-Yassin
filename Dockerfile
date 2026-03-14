@@ -12,4 +12,4 @@ ENV ID=Docker_55_3546
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","app.jar","--server.address=0.0.0.0","--server.port=8080"]
+ENTRYPOINT ["java","-jar","app.jar"]
