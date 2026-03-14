@@ -5,5 +5,7 @@ services:
     ports:
       - "3546:8080"
     environment:
-      USER_NAME: Compose_Malak_Yassin
-      ID: Compose_55_3546
+      APP_DESCRIPTION: "Users and Notes API"
+      APP_VERSION: "1.0.0"
+      USER_NAME: "Compose_Malak_Yassin"
+      ID: "Compose_55_3546"
